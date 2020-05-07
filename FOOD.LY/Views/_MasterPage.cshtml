@@ -3,236 +3,224 @@
 <html lang="en" class="">
 
 <head>
-	<!-- Required meta tags always come first -->
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<meta http-equiv="x-ua-compatible" content="ie=edge">
-	<!-- Font Awesome -->
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
-	<!-- Bootstrap core CSS -->
-	<link href="~/Assets/css/bootstrap.min.css" rel="stylesheet">
-	<!-- Material Design Bootstrap -->
-	<link href="~/Assets/css/mdb.min.css" rel="stylesheet">
+    <title>@ViewBag.Title</title>
+    <!-- Required meta tags always come first -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    @*<!-- Font Awesome -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+        <!-- Bootstrap core CSS -->
+        <link href="~/Assets/css/bootstrap.min.css" rel="stylesheet" />
+        <!-- Material Design Bootstrap -->
+        <link href="~/Assets/css/mdb.min.css" rel="stylesheet" />
+        <link href="~/Assets/css/style.css" rel="stylesheet" />
+        <!-- JQuery -->
+        <script src="~/Assets/js/jquery.min.js"></script>
+        <!-- Bootstrap tooltips -->
+        <script type="text/javascript" src="~/Assets/js/popper.min.js"></script>
+        <!-- Bootstrap core JavaScript -->
+        <script src="~/Assets/js/bootstrap.min.js"></script>
+        <!-- MDB core JavaScript -->
+        <script src="~/Assets/js/mdb.min.js"></script>*@
 
-	<!-- JQuery -->
-	<script type="text/javascript" src="~/Assets/js/jquery.min.js"></script>
-	<title>@ViewBag.Title</title>
-</head>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.16.0/css/mdb.min.css" rel="stylesheet">
+    <!-- JQuery -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.16.0/js/mdb.min.js"></script>
+
+
+
+</head> 
 <body>
 
-	<!--Main Navigation-->
-	<header>
+    <!--Main Navigation-->
+    <header>
+        <div>
+            <!--Navbar-->
+            <nav class="navbar fixed-top navbar-expand-lg navbar-light scrolling-navbar white">
+                <div class="container-fluid justify-content-center align-items-center">
 
-		<!--Navbar-->
-		<nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar">
-			<div class="container">
-				<a class="navbar-brand" href="#">
-					<strong>Food.ly</strong>
-				</a>
-				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-7"
-						aria-controls="navbarSupportedContent-7" aria-expanded="false" aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
-				</button>
-				<div class="collapse navbar-collapse" id="navbarSupportedContent-7">
-					<ul class="navbar-nav mr-auto">
-						<li class="nav-item active">
-							<a class="nav-link" href="#">
-								Home
-								<span class="sr-only">(current)</span>
-							</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="#">Link</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="#">Profile</a>
-						</li>
-					</ul>
-					<form class="form-inline">
-						<div class="md-form my-0">
-							<input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-						</div>
-					</form>
-				</div>
-			</div>
-		</nav>
+                    <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-4" aria-controls="navbarSupportedContent-4" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="navbar-collapse justify-content-center collapse" id="navbarSupportedContent-4" style="">
+                        <ul class="navbar-nav">
+                            <li class="nav-item ml-4 mb-0">
+                                <b>
+                                    <i class="fas fa-utensils"></i>
+                                    @*@Html.ActionLink("FoodLY", "Index", "Default", new { area = "" }, new { @class = "navbar-brand" })*@
+                                    @Html.ActionLink("FoodLY", "Blog", "Blog", new { area = "" }, new { @class = "navbar-brand" })
+                                </b>
+                            </li>
+                            <li class="nav-item dropdown ml-4 mb-0">
+                                <b>
+                                    @Html.ActionLink("Search", "Search", "Search", new { area = "" }, new { @class = "navbar-brand" })
+                                </b>
+                            </li>
+                            <li class="nav-item dropdown ml-4 mb-0">
+                                <b>
+                                    @Html.ActionLink("Add Content", "Index", "About", new { area = "" }, new { @class = "navbar-brand" })
+                                </b>
+                            </li>
+                            <li class="nav-item dropdown ml-4 mb-0">
+                                <b>
+                                    @Html.ActionLink("Login", "Index", "About", new { area = "" }, new { @class = "navbar-brand" })
+                                </b>
+                            </li>
+                            <li class="nav-item dropdown ml-4 mb-0">
+                                <b>
+                                    @Html.ActionLink("About", "Index", "About", new { area = "" }, new { @class = "navbar-brand" })
+                                </b>
+                            </li>
+                            <li class="nav-item dropdown ml-4 mb-0">
+                                <button class="btn my-1 navbar-brand" data-toggle="modal" data-target="#modalLRForm">
+                                    <b> Login</b>
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <!-- /.Navbar -->
+        </div>
+    </header>
+    <br />
+    <br />
+    <br />
+    <br />
+    <!--Main Navigation-->
+    <!--Main Layout-->
+    <main>
+        <div class="container">
+            @RenderBody()
+        </div>
+    </main>
+    <!--Main Layout-->
+    <!--Modal: Login / Register Form-->
+    <!--Modal: Login / Register Form-->
+    <div class="modal fade" id="modalLRForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog cascading-modal" role="document">
+            <!--Content-->
+            <div class="modal-content">
 
-		<!-- Intro Section -->
-		<div class="view jarallax" data-jarallax='{"speed": 0.2}' style="background-image: url(~/Assets/img/banner/food-banner.jpg); background-repeat: no-repeat; background-size: cover; background-position: center center;">
-			<div class="mask rgba-white-light">
-				<div class="container h-100 d-flex justify-content-center align-items-center">
-					<div class="row pt-5 mt-3">
-						<div class="col-md-12 mb-3">
-							<div class="intro-info-content text-center">
-								<h1 class="display-3 mb-5 wow fadeInDown" data-wow-delay="0.3s">
-									NEW
-									<a class="indigo-text font-weight-bold">COLLECTION</a>
-								</h1>
-								<h5 class="text-uppercase mb-5 mt-1 font-weight-bold wow fadeInDown" data-wow-delay="0.3s">
-									Free
-									delivery & special prices
-								</h5>
-								<a class="btn btn-outline-indigo btn-lg wow fadeInDown" data-wow-delay="0.3s">Shop</a>
-								<a class="btn btn-indigo btn-lg wow fadeInDown" data-wow-delay="0.3s">Lookbook</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+                <!--Modal cascading tabs-->
+                <div class="modal-c-tabs">
 
-	</header>
-	<!--Main Navigation-->
-	<!--Main Layout-->
-	<main>
-		<div class="container">
-			@RenderBody()
-		</div>
-	</main>
-	<!--Main Layout-->
-	<!--Footer-->
-	<footer class="page-footer pt-4 mt-4 text-center text-md-left mdb-color lighten-2">
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-tabs md-tabs tabs-2 light-blue darken-3" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" data-toggle="tab" href="#panel7" role="tab">
+                                <i class="fas fa-user mr-1"></i>
+                                Login
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="tab" href="#panel8" role="tab">
+                                <i class="fas fa-user-plus mr-1"></i>
+                                Register
+                            </a>
+                        </li>
+                    </ul>
 
-		<!--Footer Links-->
-		<div class="container">
-			<div class="row">
+                    <!-- Tab panels -->
+                    <div class="tab-content">
+                        <!--Panel 7-->
+                        <div class="tab-pane fade in show active" id="panel7" role="tabpanel">
 
-				<!--First column-->
-				<div class="col-md-3 mr-auto">
-					<h5 class="text-uppercase mb-3">Footer Content</h5>
-					<p>
-						Here you can use rows and columns here to organize your footer content. Lorem ipsum dolor sit amet,
-						consectetur
-						adipisicing elit.
-					</p>
-				</div>
-				<!--/.First column-->
+                            <!--Body-->
+                            <div class="modal-body mb-1">
+                                <div class="md-form form-sm mb-5">
+                                    <i class="fas fa-envelope prefix"></i>
+                                    <input type="email" id="txtEMAIL1" class="form-control form-control-sm validate">
+                                    <label data-error="wrong" data-success="right" for="modalLRInput10">Your email</label>
+                                </div>
 
-				<hr class="w-100 clearfix d-md-none">
+                                <div class="md-form form-sm mb-4">
+                                    <i class="fas fa-lock prefix"></i>
+                                    <input type="password" id="txtPASSWORD1" class="form-control form-control-sm validate">
+                                    <label data-error="wrong" data-success="right" for="modalLRInput11">Your password</label>
+                                </div>
+                                <div class="text-center mt-2">
+                                    <button class="btn btn-info" id="btnlogin" value="Login" onclick="LaginData()">Log in <i class="fas fa-sign-in ml-1"></i></button>
+                                </div>
+                            </div>
+                            <!--Footer-->
+                            <div class="modal-footer">
+                                <div class="options text-center text-md-right mt-1">
 
-				<!--Second column-->
-				<div class="col-md-2 ml-auto">
-					<h5 class="text-uppercase mb-3">Links</h5>
-					<ul class="list-unstyled">
-						<li>
-							<a href="#!">Link 1</a>
-						</li>
-						<li>
-							<a href="#!">Link 2</a>
-						</li>
-						<li>
-							<a href="#!">Link 3</a>
-						</li>
-						<li>
-							<a href="#!">Link 4</a>
-						</li>
-					</ul>
-				</div>
-				<!--/.Second column-->
+                                    <p>Forgot <a href="#" class="blue-text">Password?</a></p>
+                                </div>
+                                <button type="button" class="btn btn-outline-info waves-effect ml-auto" data-dismiss="modal">Close</button>
+                            </div>
 
-				<hr class="w-100 clearfix d-md-none">
+                        </div>
+                        <!--/.Panel 7-->
+                        <!--Panel 8-->
+                        <div class="tab-pane fade" id="panel8" role="tabpanel">
 
-				<!--Third column-->
-				<div class="col-md-2 ml-auto">
-					<h5 class="text-uppercase mb-3">Links</h5>
-					<ul class="list-unstyled">
-						<li>
-							<a href="#!">Link 1</a>
-						</li>
-						<li>
-							<a href="#!">Link 2</a>
-						</li>
-						<li>
-							<a href="#!">Link 3</a>
-						</li>
-						<li>
-							<a href="#!">Link 4</a>
-						</li>
-					</ul>
-				</div>
-				<!--/.Third column-->
+                            <!--Body-->
+                            <div class="modal-body">
+                                <div class="md-form form-sm mb-5">
+                                    <i class="fas fa-envelope prefix"></i>
+                                    <input type="email" id="txtEMAIL" class="form-control form-control-sm validate">
+                                    <label data-error="wrong" data-success="right" for="modalLRInput12">Your email</label>
+                                </div>
+                                <div class="md-form form-sm mb-5">
+                                    <i class="fas fa-envelope prefix"></i>
+                                    <input type="text" id="txtCONTACTNO" class="form-control form-control-sm validate">
+                                    <label data-error="wrong" data-success="right" for="modalLRInput12">Contact no</label>
+                                </div>
+                                <div class="md-form form-sm mb-5">
+                                    <i class="fas fa-lock prefix"></i>
+                                    <input type="password" id="txtPASSWORD" class="form-control form-control-sm validate">
+                                    <label data-error="wrong" data-success="right" for="modalLRInput13">Your password</label>
+                                </div>
 
-				<hr class="w-100 clearfix d-md-none">
+                                <div class="md-form form-sm mb-4">
+                                    <i class="fas fa-lock prefix"></i>
+                                    <input type="password" id="txtPASSWORDCNFM" class="form-control form-control-sm validate">
+                                    <label data-error="wrong" data-success="right" for="modalLRInput14">Repeat password</label>
+                                </div>
 
-				<!--Fourth column-->
-				<div class="col-md-3 ml-auto">
-					<h5 class="text-uppercase mb-3">Links</h5>
-					<ul class="list-unstyled">
-						<li>
-							<a href="#!">Link 1</a>
-						</li>
-						<li>
-							<a href="#!">Link 2</a>
-						</li>
-						<li>
-							<a href="#!">Link 3</a>
-						</li>
-						<li>
-							<a href="#!">Link 4</a>
-						</li>
-					</ul>
-				</div>
-				<!--/.Fourth column-->
+                                <div class="text-center form-sm mt-2">
+                                    <button class="btn btn-info" id="btnregister" value="Signup" onclick="SaveData()">Sign up <i class="fas fa-sign-in ml-1"></i></button>
+                                </div>
 
-			</div>
-		</div>
-		<!--/.Footer Links-->
+                            </div>
+                            <!--Footer-->
+                            <div class="modal-footer">
+                                <div class="options text-right">
+                                    <p class="pt-1">Already have an account? <a href="#" class="blue-text">Log In</a></p>
+                                </div>
+                                <button type="button" class="btn btn-outline-info waves-effect ml-auto" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                        <!--/.Panel 8-->
+                    </div>
 
-		<hr>
+                </div>
+            </div>
+            <!--/.Content-->
+        </div>
+    </div>
+    <!--Modal: Login / Register Form-->
+    <!--Modal: Login / Register Form-->
 
-		<!--Social buttons-->
-		<div class="social-section text-center">
-			<ul class="list-unstyled list-inline">
-
-				<li class="list-inline-item">
-					<a class="btn-floating btn-fb">
-						<i class="fab fa-facebook-f"> </i>
-					</a>
-				</li>
-				<li class="list-inline-item">
-					<a class="btn-floating btn-tw">
-						<i class="fab fa-twitter"> </i>
-					</a>
-				</li>
-				<li class="list-inline-item">
-					<a class="btn-floating btn-gplus">
-						<i class="fab fa-google-plus-g"> </i>
-					</a>
-				</li>
-				<li class="list-inline-item">
-					<a class="btn-floating btn-li">
-						<i class="fab fa-linkedin-in"> </i>
-					</a>
-				</li>
-				<li class="list-inline-item">
-					<a class="btn-floating btn-dribbble">
-						<i class="fab fa-dribbble"> </i>
-					</a>
-				</li>
-
-			</ul>
-		</div>
-		<!--/.Social buttons-->
-		<!--Copyright-->
-		<div class="footer-copyright py-3 text-center">
-			<div class="container-fluid">
-				&copy; 2020 Copyright:
-				<a href="#"> FOOD.LY </a>
-
-			</div>
-		</div>
-		<!--/.Copyright-->
-
-	</footer>
-	<!--/.Footer-->
-	<!--  SCRIPTS  -->
-	<!-- Bootstrap tooltips -->
-	<script type="text/javascript" src="~/Assets/js/popper.min.js"></script>
-	<!-- Bootstrap core JavaScript -->
-	<script type="text/javascript" src="~/Assets/js/bootstrap.min.js"></script>
-	<!-- MDB core JavaScript -->
-	<script type="text/javascript" src="~/Assets/js/mdb.min.js"></script>
-
+    <script src="~/Scripts/RegisterLogin.js"></script>
 </body>
 
 </html>

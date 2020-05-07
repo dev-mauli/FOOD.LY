@@ -118,3 +118,8 @@
     overflow: auto !important;
   }
 }
+
+// fix scroll in our SideNav
+.ps__rail-y{
+  top: 0 !important;
+}
