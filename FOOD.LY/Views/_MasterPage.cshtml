@@ -8,7 +8,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    @*<!-- Font Awesome -->
+    <!-- Font Awesome -->
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
         <!-- Bootstrap core CSS -->
@@ -23,9 +23,9 @@
         <!-- Bootstrap core JavaScript -->
         <script src="~/Assets/js/bootstrap.min.js"></script>
         <!-- MDB core JavaScript -->
-        <script src="~/Assets/js/mdb.min.js"></script>*@
+        <script src="~/Assets/js/mdb.min.js"></script>
 
-    <!-- Font Awesome -->
+    @*<!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
     <!-- Google Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
@@ -40,7 +40,7 @@
     <!-- Bootstrap core JavaScript -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script>
     <!-- MDB core JavaScript -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.16.0/js/mdb.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.16.0/js/mdb.min.js"></script>*@
 
 
 
@@ -63,7 +63,7 @@
                                 <b>
                                     <i class="fas fa-utensils"></i>
                                     @*@Html.ActionLink("FoodLY", "Index", "Default", new { area = "" }, new { @class = "navbar-brand" })*@
-                                    @Html.ActionLink("FoodLY", "Blog", "Blog", new { area = "" }, new { @class = "navbar-brand" })
+                                    @Html.ActionLink("FoodLY", "Main", "Home", new { area = "" }, new { @class = "navbar-brand" })
                                 </b>
                             </li>
                             <li class="nav-item dropdown ml-4 mb-0">
@@ -73,7 +73,7 @@
                             </li>
                             <li class="nav-item dropdown ml-4 mb-0">
                                 <b>
-                                    @Html.ActionLink("Add Content", "Index", "About", new { area = "" }, new { @class = "navbar-brand" })
+                                    @Html.ActionLink("Add Content", "ADDRECEIPE", "AddRecipe", new { area = "" }, new { @class = "navbar-brand" })
                                 </b>
                             </li>
                             <li class="nav-item dropdown ml-4 mb-0">
@@ -149,7 +149,7 @@
                                     <label data-error="wrong" data-success="right" for="modalLRInput10">Your email</label>
                                 </div>
 
-                                <div class="md-form form-sm mb-4">
+                                <div class="md-form form-sm mb-4">  
                                     <i class="fas fa-lock prefix"></i>
                                     <input type="password" id="txtPASSWORD1" class="form-control form-control-sm validate">
                                     <label data-error="wrong" data-success="right" for="modalLRInput11">Your password</label>
