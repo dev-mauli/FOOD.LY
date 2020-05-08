@@ -13,7 +13,6 @@ namespace FOOD.LY.BE
          public string DESCRIPTION {get; set;}
          public string ENTEREDBY {get; set;}
          public string ENTEREDON {get; set;}
-         public string ACTIVE { get; set;}
     }
 }
 

@@ -1,12 +1,7 @@
 ﻿$(document).ready(function () {
 
-	//$('#txtPASSWORDCNFM').keypress(function () {
-	//	if ($('#txtPASSWORDCNFM').val() === $('#txtPASSWORD').val()) {
-	//		$('#modalLRInput14').focus();
-	//	}
-	//});
-
 });
+
 //REGISTER FUNATION
 function SaveData() {
 	var REGISTER_MST =
@@ -20,7 +15,8 @@ function SaveData() {
 	var url = '/Home/Register';
 
 	if ($("#btnregister").val() === "Signup") {
-		if (!isvalid()) {
+        if (!isvalid()) {
+
 			alert("Please Provide Values.");
 		}
 		else {

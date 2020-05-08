@@ -233,6 +233,7 @@
     <Content Include="Global.asax" />
     <Content Include="Scripts\AddRecepie.js" />
     <Content Include="Scripts\RegisterLogin.js" />
+    <Content Include="Scripts\Summernote.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
