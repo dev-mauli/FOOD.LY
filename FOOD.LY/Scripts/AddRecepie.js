@@ -17,38 +17,47 @@
     $('#btnaddimages').click(function () {
         $("#imagesDiv").toggle(1000);
     });
+
+    $("input[type='radio']").click(function () {
+
+        var radioValue = $("input[name='Foodtype']:checked").val();
+        if (radioValue) {
+            // alert("Your are a - " + radioValue);
+            $("#DivshowFoodType").show(1000);
+            //  $("#lblshowFoodType").append(radioValue);
+            $("#lblshowFoodType").text("Selected Category: " + radioValue);
+
+        }
+    });
 });
 
 
 // add receipe
 function AddItem() {
-    var selValue = $("input[type='radio']:checked").val();
-    var REGISTER_MST =
+  
+    var RECIPE_MST =
     {
         TITLE: $('#txtTITLE').val(),
-        CAT: selValue,
-        DESCRIPTION: $('#summernote').text()
-        // DESCRIPTION: $('#summernote').summernote('code')
+        CAT: $("input[name='Foodtype']:checked").val(),
+        DESCRIPTION: $('#summernote').summernote('code')
     };
 
-    var REGISTER_MST_JSON = JSON.stringify(REGISTER_MST);
+    var RECIPE_MST_JSON = JSON.stringify(RECIPE_MST);
 
     var url = '/AddRecipe/SAVE';
 
-    if ($("#btnadditem").val() == "save") {
+    if ($("#btnaddreceipe").val() === "save") {
         if (!isvalid1()) {
             alert("Please Provide Values.");
         }
         else {
             $.ajax({
                 url: url,
-                data: { mdl: REGISTER_MST_JSON },
+                data: { mdl: RECIPE_MST_JSON },
                 dataType: 'json',
                 type: 'POST',
                 success: function (data) {
-                    alert('Register Sucessfully.Login');
-                    //$('#panel7').show("slow");
-                    //$('#panel8').hide("slow");
+                    alert('SAVED SUCESSFULLY.');
                 },
                 error: function (data) {
                     alert("Insert Error");
@@ -63,7 +72,8 @@ function AddItem() {
 
 function isvalid1() {
     var rntValue = true;
-
+   
+    
     if ($('#txtTITLE').val() === '') {
         $('#txtTITLE').css('border-bottom', '1px solid red');
         rntValue = false;
@@ -71,23 +81,17 @@ function isvalid1() {
     else {
         $('#txtTITLE').css('border-bottom', '1px solid #ccc');
     }
-    if ($('#txtRADIOVEG').val() === '' || $('#txtRADIONNVG').val() === '') {
-        $('#txtRADIOVEG').css('border-bottom', '1px solid red');
-        $('#txtRADIONNVG').css('border-bottom', '1px solid red');
+    if ($('#lblshowFoodType').text() === '') {
         rntValue = false;
-    }
-    else {
-        $('#txtRADIOVEG').css('border-bottom', '1px solid #ccc');
-        $('#txtRADIONNVG').css('border-bottom', '1px solid #ccc');
     }
 
-    if ($('#summernote').val() === '') {
-        $('#summernote').css('border-bottom', '1px solid red');
-        rntValue = false;
-    }
-    else {
-        $('#summernote').css('border-bottom', '1px solid #ccc');
-    }
+    //if ($('#summernote').val() === '') {
+    //    $('#summernote').css('border-bottom', '1px solid red');
+    //    rntValue = false;
+    //}
+    //else {
+    //    $('#summernote').css('border-bottom', '1px solid #ccc');
+    //}
     return rntValue;
 }
 
@@ -104,11 +108,11 @@ function preview() {
             //  $("#previewBannerimage").show(1000);
             var previewimages = $("#previewrecipeimage");
             previewimages.html("");
-            $($(this)[0].files).each(function () {
+            $($(this)[0].files).each(function (i) {
                 var file = $(this);
                 var reader = new FileReader();
                 reader.onload = function (e) {
-                    var img = $("<img />");
+                    var img = $("<img id="+i+" />");
                     img.attr("style", "border: 2px solid #ddd; border-radius: 4px; padding: 5px;  height: 220px; width: 20%; object-fit: cover;");
                     img.attr("src", e.target.result);
                     previewimages.append(img);

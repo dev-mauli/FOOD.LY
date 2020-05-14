@@ -24,16 +24,29 @@
                     <input type="text" id="txtTITLE" class="form-control">
                     <label for="txtTITLE">Tilte..</label>
                 </div>
-                <div class="custom-control custom-radio custom-control-inline btn btn-rounded btn-success" style="float:right; height:40px;">
-                    <input type="radio" class="custom-control-input" id="txtRADIOVEG" name="inlineDefaultRadiosExample">
-                    <label class="custom-control-label" for="txtRADIOVEG">Veg</label>
+                <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" class="custom-control-input" id="RDVEG" name="Foodtype" value="Veg">
+                    <label class="custom-control-label" for="RDVEG">Veg</label>
                 </div>
 
                 <!-- Default inline 2-->
-                <div class=" sex custom-control custom-radio custom-control-inline btn btn-rounded btn-amber" style="float:right; height:40px;">
-                    <input type="radio" class=" sex custom-control-input" id="txtRADIONNVG" name="inlineDefaultRadiosExample">
-                    <label class="custom-control-label" for="txtRADIONNVG">Non Veg</label>
+                <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" class="custom-control-input" id="RDNNVEG" name="Foodtype" value="NonVeg">
+                    <label class="custom-control-label" for="RDNNVEG">NonVeg</label>
                 </div>
+                <div class="col-12 text-center">
+                    <label id="lblshowFoodType" class="badge badge-info"></label>
+                </div>
+                @*<div class="btn-group btn-group-toggle" data-toggle="buttons">
+            <label class="btn btn-outline-success">
+                <input type="radio" name="Foodtype" id="1" value="Veg" autocomplete="off">
+                Veg
+            </label>
+            <label class="btn btn-outline-danger">
+                <input type="radio" name="Foodtype" id="2" value="NonVeg" autocomplete="off">
+                NonVeg
+            </label>
+        </div>*@
             </div>
         </div>
         <br />
@@ -41,7 +54,7 @@
         <div class="row">
             <div class="summernote col-12">
                 <!--Material textarea-->
-                <div id="summernote">Hello Summernote</div>
+                <div id="summernote"></div>
             </div>
         </div>
         <div class="row">
@@ -67,7 +80,7 @@
             <div class="col col-12">
                 <button type="button" id="btnpreview" class="btn btn-info btn-floating"><i class="fas fa-eye"></i></button>
                 <div class="btn-group  float-right">
-                    <button  id="btnadditem" value="save" class="btn btn-info" onclick="AddItem()"><i class="fas fa-chevron-circle-up"></i>&nbsp;&nbsp;POST</button>
+                    <button id="btnaddreceipe" value="save" class="btn btn-info" onclick="AddItem()"><i class="fas fa-chevron-circle-up"></i>&nbsp;&nbsp;POST</button>
                     <button id="btnaddimages" class="btn btn-info"><i class="fas fa-images"></i>&nbsp;&nbsp;Add Images</button>
                     <button id="btnclear" class="btn btn-info"><i class="fas fa-brush"></i>&nbsp;&nbsp;Clear</button>
                 </div>
