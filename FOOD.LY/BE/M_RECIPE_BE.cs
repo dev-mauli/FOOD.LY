@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
 
 namespace FOOD.LY.BE
 {
@@ -10,7 +11,8 @@ namespace FOOD.LY.BE
          public int ID {get; set;}
          public string TITLE {get; set;}
          public string CAT {get; set;}
-         public string DESCRIPTION {get; set;}
+		 [AllowHtml]
+		 public string DESCRIPTION {get; set;}
          public int ENTEREDBY {get; set;}
     }
 }

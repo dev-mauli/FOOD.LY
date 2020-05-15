@@ -20,7 +20,8 @@ namespace FOOD.LY.Controllers
         }
 
         [HttpPost]
-        public ActionResult SAVE(string mdl)
+		[ValidateInput(false)]
+		public ActionResult SAVE(string mdl)
         {
             try
             {
