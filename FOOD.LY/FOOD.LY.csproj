@@ -112,6 +112,8 @@
     <Content Include="Assets\css\modules\megamenu.min.css" />
     <Content Include="Assets\css\modules\parallax.min.css" />
     <Content Include="Assets\css\style.css" />
+    <Content Include="Assets\fotorama\fotorama.css" />
+    <Content Include="Assets\fotorama\fotorama.js" />
     <Content Include="Assets\img\lightbox\default-skin.png" />
     <Content Include="Assets\img\lightbox\default-skin.svg" />
     <Content Include="Assets\img\lightbox\preloader.gif" />
