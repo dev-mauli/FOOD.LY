@@ -1,4 +1,9 @@
 ﻿$(document).ready(function () {
+    $("#btnlogout").click(function () {
+        toastr.info("Logout Sucessfully", {
+            "positionClass": "md-toast-top-right",
+        });
+    });
 
 });
 
@@ -16,8 +21,9 @@ function SaveData() {
 
 	if ($("#btnregister").val() === "Signup") {
         if (!isvalid()) {
-
-			alert("Please Provide Values.");
+            toastr.info("Please Provide Values.", {
+                "positionClass": "md-toast-top-right",
+            });
 		}
 		else {
 			$.ajax({
@@ -26,12 +32,18 @@ function SaveData() {
 				dataType: 'json',
 				type: 'POST',
 				success: function (data) {
-					alert('Register Sucessfully.Login');
+					//alert('Register Sucessfully.Login');
 					//$('#panel7').show("slow");
-					//$('#panel8').hide("slow");
+                    //$('#panel8').hide("slow");
+                    toastr.success("Register Sucessfully", {
+                        "positionClass": "md-toast-top-right",
+                    });
 				},
 				error: function (data) {
-					alert("Insert Error");
+					//alert("Insert Error");
+                    toastr.error("Error occur!","Please try again.", {
+                        "positionClass": "md-toast-top-right",
+                    });
 					return false;
 				}
 
@@ -61,17 +73,28 @@ function LaginData() {
 			dataType: 'json',
 			type: 'POST',
 			success: function (data) {
-				if (data.msg === "1") {
-					alert('YOU ARE NOW LOGGED IN : WELCOME');
-					location.reload();
-				} else {
-					alert("Insert Error");
+                if (data.msg === "1") {
+                   
+					//alert('YOU ARE NOW LOGGED IN : WELCOME');
+                    toastr.success("YOU ARE NOW LOGGED IN", "WELCOME",  {
+                        "positionClass": "md-toast-top-right",
+                    });
+                    location.reload();
+					
+				} else {    
+					//alert("Insert Error");
+                    toastr.error("Error occur!", "Please try again.", {
+                        "positionClass": "md-toast-top-right",
+                    });
 				}
 
 			},
 			error: function (data) {
 				//location.reload();
-				alert("Insert Error");
+				//alert("Insert Error");
+                toastr.error("Error occur!", "Please try again.", {
+                    "positionClass": "md-toast-top-right",
+                });
 				return false;
 			}
 
