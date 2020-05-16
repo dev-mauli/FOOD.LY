@@ -3,6 +3,10 @@ using FOOD.LY.DataAccessLayer;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.IO;
+using System.Linq;
+using System.Web;
+using System.Web.Helpers;
 using System.Web.Mvc;
 
 namespace FOOD.LY.Controllers
@@ -19,9 +23,45 @@ namespace FOOD.LY.Controllers
             return View();
         }
 
+
+        [AcceptVerbs(HttpVerbs.Post)]
+        public JsonResult UploadFile()
+        {
+            string filepathrtn = "";
+            string _imgname = string.Empty;
+            if (System.Web.HttpContext.Current.Request.Files.AllKeys.Any())
+            {
+                var pic = System.Web.HttpContext.Current.Request.Files["MyImages"];
+                if (pic.ContentLength > 0)
+                {
+                    var fileName = Path.GetFileName(pic.FileName);
+                    var _ext = Path.GetExtension(pic.FileName);
+
+                    _imgname = Guid.NewGuid().ToString();
+                    var _comPath = Server.MapPath("/UploadedImage/") + _imgname + _ext;
+                    filepathrtn = "../UploadedImage/" + _imgname + _ext;
+
+                    var path = _comPath;
+
+                    // Saving Image in Original Mode
+                    pic.SaveAs(path);
+
+                    // resizing image
+                    MemoryStream ms = new MemoryStream();
+                    WebImage img = new WebImage(_comPath);
+
+                    if (img.Width > 200)
+                        img.Resize(200, 200);
+                    img.Save(_comPath);
+                    // end resize
+                }
+            }
+            return Json(Convert.ToString(filepathrtn), JsonRequestBehavior.AllowGet);
+        }
+
         [HttpPost]
-		[ValidateInput(false)]
-		public ActionResult SAVE(string mdl)
+        [ValidateInput(false)]
+        public ActionResult SAVE(string mdl)
         {
             try
             {

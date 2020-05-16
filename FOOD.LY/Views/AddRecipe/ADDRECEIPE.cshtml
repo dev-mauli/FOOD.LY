@@ -35,16 +35,6 @@
                 <div class="col-12 text-center">
                     <label id="lblshowFoodType" class="badge badge-info"></label>
                 </div>
-                @*<div class="btn-group btn-group-toggle" data-toggle="buttons">
-            <label class="btn btn-outline-success">
-                <input type="radio" name="Foodtype" id="1" value="Veg" autocomplete="off">
-                Veg
-            </label>
-            <label class="btn btn-outline-danger">
-                <input type="radio" name="Foodtype" id="2" value="NonVeg" autocomplete="off">
-                NonVeg
-            </label>
-        </div>*@
             </div>
         </div>
         <br />
@@ -57,28 +47,24 @@
         </div>
         <div class="row">
             <div class="col-12" id="imagesDiv" style="display:none;">
-                @*<button type="button" class="close" aria-label="Close">
-            <span aria-hidden="true">x</span>
-        </button>*@
+             
                 <hr />
 
                 <div class="form-group files color">
                     <h3>
                         <label>Upload Your File </label>
-                        <input type="file" name="postedFile" id="recipeimage" class="form-control" multiple="">
+                        <input type="file" name="postedFile" id="recipeimage" class="form-control" multiple>
                     </h3>
                 </div>
                 <div id="previewrecipeimage" class="column form-group border-dark">
-                   
                 </div>
-
             </div>
         </div>
         <div class="row">
             <div class="col col-12">
                 <button type="button" id="btnpreview" class="btn btn-info btn-floating"><i class="fas fa-eye"></i></button>
                 <div class="btn-group  float-right">
-                    <button id="btnaddreceipe" value="save" class="btn btn-info" onclick="AddItem()"><i class="fas fa-chevron-circle-up"></i>&nbsp;&nbsp;POST</button>
+                    <button id="btnaddreceipe" value="save" class="btn btn-info" onclick="SaveRecipeImage()"><i class="fas fa-chevron-circle-up"></i>&nbsp;&nbsp;POST</button>
                     <button id="btnaddimages" class="btn btn-info"><i class="fas fa-images"></i>&nbsp;&nbsp;Add Images</button>
                     <button id="btnclear" class="btn btn-info"><i class="fas fa-brush"></i>&nbsp;&nbsp;Clear</button>
                 </div>

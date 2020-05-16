@@ -232,6 +232,7 @@
     <Content Include="Assets\src\js\vendor\pro\scrollbar.js" />
     <Content Include="Assets\src\js\vendor\pro\scrolling-navbar.js" />
     <Content Include="Assets\src\js\vendor\pro\toastr.js" />
+    <Content Include="Assets\sweetalert2%409.js" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\AddRecepie.js" />
     <Content Include="Scripts\RegisterLogin.js" />
@@ -243,6 +244,7 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="BE\M_RECIPE_BE.cs" />
+    <Compile Include="BE\M_RECIPE_P_V_BE.cs" />
     <Compile Include="BE\SessionKeys.cs" />
     <Compile Include="BE\T_LOGIN_BE.cs" />
     <Compile Include="BE\T_TOKEN_BE.cs" />
@@ -252,6 +254,9 @@
     <Compile Include="DL\AbstractDatabaseFactory.cs" />
     <Compile Include="DL\ClassConverterHelper.cs" />
     <Compile Include="DL\SQLHelper.cs" />
+    <Compile Include="fileUploader.ashx.cs">
+      <DependentUpon>fileUploader.ashx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -381,6 +386,7 @@
     <Content Include="Assets\scss\_custom-skin.scss" />
     <Content Include="Assets\scss\_custom-styles.scss" />
     <Content Include="Assets\scss\_custom-variables.scss" />
+    <Content Include="fileUploader.ashx" />
     <None Include="packages.config" />
     <Content Include="Views\_MasterPage.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
@@ -396,6 +402,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+    <Folder Include="UploadedImage\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
