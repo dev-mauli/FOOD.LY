@@ -251,6 +251,7 @@
     <Compile Include="BL\SAVETOKEN.cs" />
     <Compile Include="Controllers\AddRecipeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ProfileController.cs" />
     <Compile Include="DL\AbstractDatabaseFactory.cs" />
     <Compile Include="DL\ClassConverterHelper.cs" />
     <Compile Include="DL\SQLHelper.cs" />
@@ -396,6 +397,7 @@
     <Content Include="Views\Home\_PartialIndex.cshtml" />
     <Content Include="Views\Shared\_PartialNav.cshtml" />
     <Content Include="Views\AddRecipe\Index.cshtml" />
+    <Content Include="Views\Profile\ProfileHome.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -407,6 +409,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
     <Folder Include="UploadedImage\" />
+    <Folder Include="Views\ProfileHome\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

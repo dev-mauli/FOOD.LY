@@ -1,0 +1,164 @@
+﻿
+@{
+    ViewBag.Title = "ProfileHome";
+    Layout = "~/Views/_MasterPage.cshtml";
+}
+<h2>ProfileHome</h2>
+<div class="row">
+    <div class="col-4">
+        <div>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS52y5aInsxSm31CvHOFHWujqUx_wWTS9iM6s7BAm21oEN_RiGoog" class="img-thumbnail" alt="" />
+        </div>
+    </div>
+    <div class="col-md-8">
+        <div class="profile-head">
+            <h5>
+                <label>Kshiti Ghelani</label>
+            </h5>
+            <h6>
+                <label>Web Developer and Designer</label>
+            </h6>
+            <h6>
+                <label>Followers : 10</label>
+            </h6>
+        </div>
+        <div class="profile-userbuttons">
+            <button type="button" class="btn btn-success btn-sm">Follow</button>
+            <button type="button" class="btn btn-danger btn-sm">Message</button>
+        </div>
+    </div>
+</div>
+<hr />
+<div class="row">
+    <ul class="nav nav-tabs md-tabs tabs-info nav-justified col-12" id="myTabEx" role="tablist">
+
+        <li class="nav-item">
+            <a class="nav-link " id="home-tab-ex" data-toggle="tab" href="#Profile-ex" role="tab" aria-controls="Profile-ex"
+               aria-selected="false"><i class="fas fa-user"></i><span>&nbsp;&nbsp;Profile</span></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="profile-tab-ex" data-toggle="tab" href="#TimeLine-ex" role="tab" aria-controls="TimeLine-ex"
+               aria-selected="false"><i class="fas fa-stream"></i><span> TimeLine</span></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="contact-tab-ex" data-toggle="tab" href="#Notifications-ex" role="tab" aria-controls="Notifications-ex"
+               aria-selected="false"><i class="fas fa-comments"></i><span> Notifications</span></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active show" id="contact-tab-ex" data-toggle="tab" href="#Settings-ex" role="tab" aria-controls="Settings-ex"
+               aria-selected="true"><i class="fas fa-cog"></i><span> Settings</span></a>
+        </li>
+    </ul>
+</div>
+
+<div class="row">
+    <div class="tab-content pt-5 col-md-12" id="myTabContentEx">
+        <div class="tab-pane fade" id="Profile-ex" role="tabpanel" aria-labelledby="Profile-tab-ex">
+            <div id="divedit">
+                <div class="md-form">
+                    <i class="fas fa-user prefix  grey-text"></i>
+                    <input type="text" id="txtFULLNAME" class="form-control validate">
+                    <label data-error="Enter Full name" data-success="Looks Right" for="txtFULLNAME">Full name</label>
+                </div>
+                <div class="md-form">
+                    <i class="fas fa-envelope prefix  grey-text"></i>
+                    <input type="email" id="txtEMAIL1" class="form-control form-control-sm validate">
+                    <label data-error="Enter Email" data-success="Looks Right" for="txtEMAIL1">Your email</label>
+                </div>
+                <div class="md-form">
+                    <i class="fas fa-mobile prefix  grey-text"></i>
+                    <input type="text" id="txtCONTACTNUM" class="form-control validate">
+                    <label data-error="Enter Contact Number" data-success="Looks Right" for="txtCONTACTNUM">Contact Number</label>
+                </div>
+                <div class="md-form">
+                    <i class="fas fa-link prefix  grey-text"></i>
+                    <input type="text" id="txtINSTALINK" class="form-control validate">
+                    <label data-error="Enter Instagram Link" data-success="Looks Right" for="txtINSTALINK">Instagram Link</label>
+                </div>
+                <div class="md-form">
+                    <i class="fas fa-link prefix  grey-text"></i>
+                    <input type="text" id="txtYOUTUBELINK" class="form-control validate">
+                    <label data-error="Enter Youtube Link" data-success="Looks Right" for="txtYOUTUBELINK">Youtube Link</label>
+                </div>
+                <div class="md-form">
+                    <i class="fas fa-link prefix  grey-text"></i>
+                    <input type="text" id="txtFACEBOOKLINK" class="form-control validate">
+                    <label data-error="Enter Facebook Link" data-success="Looks Right" for="txtFACEBOOKLINK">Facebook Link</label>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="TimeLine-ex" role="tabpanel" aria-labelledby="TimeLine-tab-ex">
+            <p>
+                Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1
+                labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft
+                beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad
+                vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar
+                helvetica VHS salvia yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes
+                anderson 8-bit, sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party
+                scenester stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park.
+            </p>
+        </div>
+        <div class="tab-pane fade" id="Notifications-ex" role="tabpanel" aria-labelledby="Notifications-tab-ex">
+            <p>
+                Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1
+                labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft
+                beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad
+                vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar
+                helvetica VHS salvia yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes
+                anderson 8-bit, sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party
+                scenester stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park.
+            </p>
+        </div>
+        <div class="tab-pane fade active show" id="Settings-ex" role="tabpanel" aria-labelledby="Settings-tab-ex">
+            <div class="row">
+                <div class="col-md-2">
+                    <div class="list-group" id="list-tab" role="tablist">
+                        <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-Edit-Profile" role="tab" aria-controls="EditProfile"><i class="fas fa-user"></i> Edit Profile</a>
+                        <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-Privacy" role="tab" aria-controls="Privacy">Privacy</a>
+                        <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-Security" role="tab" aria-controls="Security">Security</a>
+                        <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-Manage-Account" role="tab" aria-controls="ManageAccount">Manage Account</a>
+                    </div>
+                </div>
+                <div class="col-md-10">
+                    <div class="tab-content" id="nav-tabContent">
+                        <div class="tab-pane fade show active" id="list-Edit-Profile" role="tabpanel" aria-labelledby="list-home-list">
+                            <div class="md-form">
+                                <i class="fas fa-user prefix  grey-text"></i>
+                                <input type="text" id="txtFULLNAME" class="form-control validate">
+                                <label data-error="Enter Full name" data-success="Looks Right" for="txtFULLNAME">Full name</label>
+                            </div>
+                            <div class="md-form">
+                                <i class="fas fa-envelope prefix  grey-text"></i>
+                                <input type="email" id="txtEMAIL1" class="form-control form-control-sm validate">
+                                <label data-error="Enter Email" data-success="Looks Right" for="txtEMAIL1">Your email</label>
+                            </div>
+                            <div class="md-form">
+                                <i class="fas fa-mobile prefix  grey-text"></i>
+                                <input type="text" id="txtCONTACTNUM" class="form-control validate">
+                                <label data-error="Enter Contact Number" data-success="Looks Right" for="txtCONTACTNUM">Contact Number</label>
+                            </div>
+                            <div class="md-form">
+                                <i class="fas fa-link prefix  grey-text"></i>
+                                <input type="text" id="txtINSTALINK" class="form-control validate">
+                                <label data-error="Enter Instagram Link" data-success="Looks Right" for="txtINSTALINK">Instagram Link</label>
+                            </div>
+                            <div class="md-form">
+                                <i class="fas fa-link prefix  grey-text"></i>
+                                <input type="text" id="txtYOUTUBELINK" class="form-control validate">
+                                <label data-error="Enter Youtube Link" data-success="Looks Right" for="txtYOUTUBELINK">Youtube Link</label>
+                            </div>
+                            <div class="md-form">
+                                <i class="fas fa-link prefix  grey-text"></i>
+                                <input type="text" id="txtFACEBOOKLINK" class="form-control validate">
+                                <label data-error="Enter Facebook Link" data-success="Looks Right" for="txtFACEBOOKLINK">Facebook Link</label>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="list-Privacy" role="tabpanel" aria-labelledby="list-profile-list">P</div>
+                        <div class="tab-pane fade" id="list-Security" role="tabpanel" aria-labelledby="list-messages-list">S</div>
+                        <div class="tab-pane fade" id="list-Manage-Account" role="tabpanel" aria-labelledby="list-settings-list">MA</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
