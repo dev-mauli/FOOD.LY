@@ -26,8 +26,12 @@
         var radioValue = $("input[name='Foodtype']:checked").val();
         if (radioValue) {
             $("#DivshowFoodType").show(1000);
-            $("#lblshowFoodType").text("Selected Category: " + radioValue);
-
+			$("#lblshowFoodType").text("Selected Category : " + radioValue);
+			if (radioValue == "Veg") {
+				$("#lblshowFoodType").attr("class", "badge badge-success");
+			} else {
+				$("#lblshowFoodType").attr("class", "badge badge-danger");
+			}
         }
     });
 });

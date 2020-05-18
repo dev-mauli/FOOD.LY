@@ -392,6 +392,10 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\Main.cshtml" />
     <Content Include="Views\AddRecipe\ADDRECEIPE.cshtml" />
+    <Content Include="Views\Home\_PartialNav.cshtml" />
+    <Content Include="Views\Home\_PartialIndex.cshtml" />
+    <Content Include="Views\Shared\_PartialNav.cshtml" />
+    <Content Include="Views\AddRecipe\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

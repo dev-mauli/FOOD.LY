@@ -25,6 +25,15 @@ namespace FOOD.LY.Controllers
 			return View();
 		}
 
+		public ActionResult _PartialNav()
+		{
+			return PartialView();
+		}
+
+		public ActionResult _PartialIndex() {
+			return PartialView();
+		}
+
 		public ActionResult Logout()
 		{
 			Session.Clear();
@@ -32,7 +41,7 @@ namespace FOOD.LY.Controllers
 			Session[SessionKeys.FULLNAME] = null;
 			Session[SessionKeys.LOGINID] = null;
 			Session[SessionKeys.EMAIL] = null;
-			return RedirectToAction("Index", "Home");
+			return Json(new { msg = "1" }, JsonRequestBehavior.AllowGet);
 		}
 
 		[HttpPost]

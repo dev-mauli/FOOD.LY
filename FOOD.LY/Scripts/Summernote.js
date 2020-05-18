@@ -39,9 +39,9 @@
             ['style', ['bold', 'italic', 'underline', 'clear']],
             ['para', ['style', 'ul', 'ol', 'paragraph']],
             ['fontsize', ['fontsize']],
-            ['font', ['strikethrough', 'superscript', 'subscript']],
+			['table', ['table']],
             ['height', ['height']],
-            ['misc', ['undo', 'redo', 'print', 'help', 'fullscreen']]
+            ['misc', ['undo', 'redo', 'fullscreen']]
         ],
         popover: {
             air: [
@@ -54,5 +54,6 @@
         }
     });
     $('#summernote2').summernote({ airMode: true, placeholder: 'Try the airmode' });
+	$("#summernote").summernote("code", '<p style="line-height: 1;"><span style="font-size: 18px;">﻿</span><span style="font-size: 18px;">﻿</span><b><u><span style="font-size: 18px;">Ingredients&nbsp;:-</span></u></b></p><ul><li><span style="font-size: 14px;">E.g :- Oil</span></li><li><span style="font-size: 14px;">Tomato</span></li><li><span style="font-size: 14px;"><br></span></li></ul><p><span style="font-weight: bolder; font-size: 18px;"><u>Procedure :-</u></span></p><ul><li><span style="font-size: 14px;">E.g :- Cut Tomatoes, Onions</span></li><li><br></li></ul>');
 
 });

@@ -1,0 +1,137 @@
+﻿@model FOOD.LY.BE.M_RECIPE_BE
+
+@{
+	ViewBag.Title = "Food.LY - Add Receipe";
+	Layout = "~/Views/_MasterPage.cshtml";
+}
+<script src="~/Scripts/Summernote.js?ver=@DateTime.Now.Ticks.ToString()"></script>
+<div>
+	<div class="row" id="heading" style="display:none;">
+		<div class="col-6"><h1><small id="ADDRECEIPE"><i class="fas fa-utensils"></i> Add Receipe</small></h1></div>
+		@*<div class="col-6">
+				<button type="button" id="btnadditem" class="btn btn-primary float-right"><i class="fas fa-plus"></i>&nbsp;&nbsp;Add</button>
+				<button type="button" id="btngetdetails" class="btn btn-primary float-right" style="display:none;"><i class="fas fa-angle-down"></i>&nbsp;&nbsp;Get Deatils</button>
+			</div>*@
+	</div>
+	<hr style="border: 0.5px solid">
+	<div id="addpage">
+		<div class="row">
+			<div class="col-12">
+				<!-- Material background input -->
+				<div class="md-form md-bg">
+					<input type="text" id="txtTITLE" class="form-control">
+					<label for="txtTITLE">Enter Receipe Tilte..</label>
+				</div>
+				<div class="custom-control custom-radio custom-control-inline">
+					<input type="radio" class="custom-control-input" id="RDVEG" name="Foodtype" value="Veg">
+					<label class="custom-control-label" for="RDVEG">Veg</label>
+				</div>
+
+				<!-- Default inline 2-->
+				<div class="custom-control custom-radio custom-control-inline">
+					<input type="radio" class="custom-control-input" id="RDNNVEG" name="Foodtype" value="Non-Veg">
+					<label class="custom-control-label" for="RDNNVEG">Non-Veg</label>
+				</div>
+				<div class="col-12 text-center">
+					<label id="lblshowFoodType" style="font-size: 15px;"></label>
+				</div>
+			</div>
+		</div>
+		<br />
+
+		<div class="row">
+			<div class="summernote col-12">
+				<!--Material textarea-->
+				<div id="summernote"></div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-12" id="imagesDiv" style="display:none;">
+				<hr />
+				<div class="form-group files color">
+					<h3>
+						<label>Upload Your File </label>
+						<input type="file" name="postedFile" id="recipeimage" class="form-control" multiple>
+					</h3>
+				</div>
+				<div id="previewrecipeimage" class="column form-group border-dark">
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col col-12">
+				<button type="button" id="btnpreview" class="btn btn-info btn-floating"><i class="fas fa-eye"></i></button>
+				<div class="btn-group  float-right">
+					<button id="btnaddreceipe" value="save" class="btn btn-info" onclick="SaveRecipeImage()"><i class="fas fa-chevron-circle-up"></i>&nbsp;&nbsp;POST</button>
+					<button id="btnaddimages" class="btn btn-info"><i class="fas fa-images"></i>&nbsp;&nbsp;Add Images</button>
+					<button id="btnclear" class="btn btn-info"><i class="fas fa-brush"></i>&nbsp;&nbsp;Clear</button>
+				</div>
+
+			</div>
+		</div>
+	</div>
+	<div id="detailspage" style="display:none;">details</div>
+
+</div>
+<script src="~/Scripts/AddRecepie.js?ver=@DateTime.Now.Ticks.ToString()"></script>
+<style>
+	.files input {
+		outline: 2px dashed #92b0b3;
+		outline-offset: -10px;
+		-webkit-transition: outline-offset .15s ease-in-out, background-color .15s linear;
+		transition: outline-offset .15s ease-in-out, background-color .15s linear;
+		padding: 120px 0px 85px 35%;
+		text-align: center !important;
+		margin: 0;
+		width: 100% !important;
+	}
+
+		.files input:focus {
+			outline: 2px dashed #92b0b3;
+			outline-offset: -10px;
+			-webkit-transition: outline-offset .15s ease-in-out, background-color .15s linear;
+			transition: outline-offset .15s ease-in-out, background-color .15s linear;
+			border: 1px solid #92b0b3;
+		}
+
+	.files {
+		position: relative
+	}
+
+		.files:after {
+			pointer-events: none;
+			position: absolute;
+			top: 60px;
+			left: 0;
+			width: 50px;
+			right: 0;
+			height: 56px;
+			content: "";
+			background-image: url(https://image.flaticon.com/icons/png/128/109/109612.png);
+			display: block;
+			margin: 0 auto;
+			background-size: 100%;
+			background-repeat: no-repeat;
+		}
+
+	.color input {
+		background-color: #f1f1f1;
+	}
+
+	.files:before {
+		position: absolute;
+		bottom: 10px;
+		left: 0;
+		pointer-events: none;
+		width: 100%;
+		right: 0;
+		height: 57px;
+		content: " or drag it here. ";
+		display: block;
+		margin: 0 auto;
+		color: #2ea591;
+		font-weight: 600;
+		text-transform: capitalize;
+		text-align: center;
+	}
+</style>
