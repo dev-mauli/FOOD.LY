@@ -450,7 +450,7 @@ namespace FOOD.LY.DataAccessLayer
 				string json = Encrypt(ReturnedValue.ToString());
 
 				//HttpWebRequest httpWebRequest = (HttpWebRequest)WebRequest.Create(System.Configuration.ConfigurationManager.AppSettings["APIKEYURL"] + "/api/apiBookingMaster/PostBookingIsPaid");
-				HttpWebRequest httpWebRequest = (HttpWebRequest)WebRequest.Create(System.Configuration.ConfigurationManager.AppSettings["APIKEYURL"] + TKT.TOKENPATH + "?J=" + json);
+				HttpWebRequest httpWebRequest = (HttpWebRequest)WebRequest.Create(System.Configuration.ConfigurationManager.AppSettings["APIKEYURL"] + TKT.TOKENPATH + "?J=" + json.Trim());
 				httpWebRequest.ContentType = "text/json";
 				httpWebRequest.Method = "POST";
 				using (StreamWriter streamWriter = new StreamWriter(httpWebRequest.GetRequestStream()))
@@ -466,7 +466,7 @@ namespace FOOD.LY.DataAccessLayer
 				string getjson = re.ReadToEnd();
 				return getjson;
 			}
-			catch (Exception)
+			catch (Exception e)
 			{
 				throw;
 			}

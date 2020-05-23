@@ -1,84 +1,95 @@
 ﻿using FOOD.LY.BE;
 using FOOD.LY.DataAccessLayer;
 using System;
-using System.Collections.Generic;
-using System.Data;
 using System.IO;
-using System.Linq;
 using System.Web;
 using System.Web.Helpers;
 using System.Web.Mvc;
 
 namespace FOOD.LY.Controllers
 {
-    public class AddRecipeController : Controller
-    {
-        // GET: AddRecipe
-        public ActionResult Index()
-        {
-            return View();
-        }
-        public ActionResult ADDRECEIPE()
-        {
-            return View();
-        }
+	public class AddRecipeController : Controller
+	{
+		private readonly System.Web.Script.Serialization.JavaScriptSerializer serializer = new System.Web.Script.Serialization.JavaScriptSerializer();
+		// GET: AddRecipe
+		public ActionResult Index()
+		{
+			return View();
+		}
+		public ActionResult ADDRECEIPE()
+		{
+			return View();
+		}
 
 
-        [AcceptVerbs(HttpVerbs.Post)]
-        public JsonResult UploadFile()
-        {
-            string filepathrtn = "";
-            string _imgname = string.Empty;
-            if (System.Web.HttpContext.Current.Request.Files.AllKeys.Any())
-            {
-                var pic = System.Web.HttpContext.Current.Request.Files["MyImages"];
-                if (pic.ContentLength > 0)
-                {
-                    var fileName = Path.GetFileName(pic.FileName);
-                    var _ext = Path.GetExtension(pic.FileName);
+		[AcceptVerbs(HttpVerbs.Post)]
+		public JsonResult UploadFile()
+		{
+			string filepathrtn = "";
+			string _imgname = string.Empty;
+			HttpFileCollectionBase files = Request.Files;
 
-                    _imgname = Guid.NewGuid().ToString();
-                    var _comPath = Server.MapPath("/UploadedImage/") + _imgname + _ext;
-                    filepathrtn = "../UploadedImage/" + _imgname + _ext;
+			for (int i = 0; i < files.Count; i++)
+			{
+				HttpPostedFile pic = System.Web.HttpContext.Current.Request.Files["MyImages" + i];
+				if (pic.ContentLength > 0)
+				{
+					string fileName = Path.GetFileName(pic.FileName);
+					string _ext = Path.GetExtension(pic.FileName);
 
-                    var path = _comPath;
+					_imgname = Guid.NewGuid().ToString();
+					string _comPath = Server.MapPath("/UploadedImage/") + _imgname + _ext;
+					if (filepathrtn == "")
+					{
+						filepathrtn += "../UploadedImage/" + _imgname + _ext;
+					}
+					else
+					{
+						filepathrtn += "|../UploadedImage/" + _imgname + _ext;
+					}
+					string path = _comPath;
+					// Saving Image in Original Mode
+					pic.SaveAs(path);
 
-                    // Saving Image in Original Mode
-                    pic.SaveAs(path);
+					// resizing image
+					//MemoryStream ms = new MemoryStream();
+					//WebImage img = new WebImage(_comPath);
 
-                    // resizing image
-                    MemoryStream ms = new MemoryStream();
-                    WebImage img = new WebImage(_comPath);
+					//if (img.Width > 200)
+					//{
+					//	img.Resize(200, 200);
+					//}
 
-                    if (img.Width > 200)
-                        img.Resize(200, 200);
-                    img.Save(_comPath);
-                    // end resize
-                }
-            }
-            return Json(Convert.ToString(filepathrtn), JsonRequestBehavior.AllowGet);
-        }
+					//img.Save(_comPath);
+					// end resize
+				}
+			}
 
-        [HttpPost]
-        [ValidateInput(false)]
-        public ActionResult SAVE(string mdl)
-        {
-            try
-            {
-                System.Web.Script.Serialization.JavaScriptSerializer serializer = new System.Web.Script.Serialization.JavaScriptSerializer();
+			return Json(Convert.ToString(filepathrtn), JsonRequestBehavior.AllowGet);
+		}
 
-                T_TOKEN_BE api = serializer.Deserialize<T_TOKEN_BE>(mdl);
+		[HttpPost]
+		[ValidateInput(false)]
+		public ActionResult SAVE(string mdl)
+		{
+			try
+			{
+				M_RECIPE_BE __mdl = serializer.Deserialize<M_RECIPE_BE>(mdl);
+				__mdl.ENTEREDBY = Convert.ToInt32(Session[SessionKeys.LOGINID]);
+				T_TOKEN_BE api = new T_TOKEN_BE
+				{
+					TOKENPATH = "/api/AddRecipe/AddRecipe",
+					TOKEMSG = serializer.Serialize(__mdl),
+					ENTEREDBY = Convert.ToInt32(Session[SessionKeys.LOGINID])
+				};
 
-                api.TOKENPATH = "/api/AddRecipe/AddRecipe";
-                api.TOKEMSG = mdl;
-
-                string m_x_Result = ClassConverterHelper.ConnectToAPI(api);
-                return Json(new { msg = m_x_Result }, JsonRequestBehavior.AllowGet);
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-        }
-    }
+				string m_x_Result = ClassConverterHelper.ConnectToAPI(api);
+				return Json(new { msg = m_x_Result }, JsonRequestBehavior.AllowGet);
+			}
+			catch (Exception)
+			{
+				throw;
+			}
+		}
+	}
 }

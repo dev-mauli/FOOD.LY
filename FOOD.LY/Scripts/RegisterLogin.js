@@ -17,7 +17,7 @@ function LogoUt() {
 				showConfirmButton: false,
 				timer: 1500
 			});
-			$('#partialView').load('_PartialNav');
+			$('#partialView').load('/Home/_PartialNav');
 			$('#partailindex').load('/Home/_PartialIndex');
 		},
 		error: function (data) {
@@ -81,7 +81,7 @@ function SaveData() {
 function LaginData() {
 	var LOGIN_MST =
 	{
-		EMAIL: $('#txtEMAIL1').val(),
+		EMAIL: $('#txtEMAILPROFILE').val(),
 		PASSWORD: $('#txtPASSWORD1').val()
 	};
 	var LOGIN_MST_JSON = JSON.stringify(LOGIN_MST);
@@ -104,12 +104,12 @@ function LaginData() {
 							position: 'center',
 							icon: 'success',
 							title: 'Login Successfull.',
-							text: "Welcome :" + $('#txtEMAIL1').val(),
+							text: "Welcome",
 							showConfirmButton: false,
 							timer: 2000
 						});
 						$('#modalLRForm').modal('toggle');
-						$('#partialView').load('_PartialNav');
+						$('#partialView').load('/Home/_PartialNav');
 						$('#partailindex').load('/Home/_PartialIndex');
 						Clear();
 					} else {

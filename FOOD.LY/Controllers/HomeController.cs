@@ -10,7 +10,7 @@ namespace FOOD.LY.Controllers
 
 	public class HomeController : Controller
 	{
-
+		private System.Web.Script.Serialization.JavaScriptSerializer serializer = new System.Web.Script.Serialization.JavaScriptSerializer();
 		private ClassConverterHelper dtl = new ClassConverterHelper();
 		// GET: Home
 		public ActionResult Index()
@@ -30,7 +30,8 @@ namespace FOOD.LY.Controllers
 			return PartialView();
 		}
 
-		public ActionResult _PartialIndex() {
+		public ActionResult _PartialIndex()
+		{
 			return PartialView();
 		}
 
@@ -71,7 +72,7 @@ namespace FOOD.LY.Controllers
 
 			try
 			{
-				System.Web.Script.Serialization.JavaScriptSerializer serializer = new System.Web.Script.Serialization.JavaScriptSerializer();
+
 
 				T_TOKEN_BE api = serializer.Deserialize<T_TOKEN_BE>(mdl);
 
@@ -110,6 +111,29 @@ namespace FOOD.LY.Controllers
 			{
 				throw;
 			}
+		}
+
+		[HttpPost]
+		public ActionResult AllPost()
+		{
+			T_POST p = new T_POST();
+			//if (Session[SessionKeys.LOGINID].ToString() == "" || Session[SessionKeys.LOGINID] == null)
+			//{
+				p.ENTEREDBY = 0;
+			//}
+			//else
+			//{
+			//	p.ENTEREDBY = Convert.ToInt32(Session[SessionKeys.LOGINID]);
+			//}
+
+			T_TOKEN_BE api = new T_TOKEN_BE
+			{
+				TOKENPATH = "/api/Home/AllPost",
+				TOKEMSG = serializer.Serialize(p)
+			};
+
+			string m_x_Result = ClassConverterHelper.ConnectToAPI(api);
+			return Json(new { msg = m_x_Result }, JsonRequestBehavior.AllowGet);
 		}
 	}
 }

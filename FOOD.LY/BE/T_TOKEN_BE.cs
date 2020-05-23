@@ -6,6 +6,6 @@
 		public int USERID { get; set; }
 		public string TOKEMSG { get; set; }
 		public string TOKENPATH { get; set; }
-		public string ENTEREDBY { get; set; }
+		public int ENTEREDBY { get; set; }
 	}
 }

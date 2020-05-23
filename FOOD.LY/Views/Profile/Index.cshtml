@@ -1,0 +1,273 @@
+﻿
+@{
+	ViewBag.Title = "FOOD.LY - My Profile";
+	Layout = "~/Views/_MasterPage.cshtml";
+}
+<div style="padding-bottom: 75px;">
+	@*<h2>Profile</h2>*@
+</div>
+
+<div class="row">
+	<div class="col-md-4">
+		<section class="card profile-card mb-4 text-center">
+			<div class="avatar z-depth-1-half" style="max-width: 150px;
+    max-height: 150px;
+    margin-top: -70px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 50%;
+    overflow: hidden;">
+				<img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(8).jpg" alt="" class="img-fluid">
+			</div>
+			<div class="card-body">
+				<h4 class="card-title"><strong>Kshiti Ghelani</strong></h4>
+				<hr />
+				<h5><a href="#">Followers</a></h5>
+				<h5><a href="#">20 Following</a></h5>
+				<br />
+				<button type="button" class="btn btn-success btn-rounded btn-sm waves-effect waves-light" data-toggle="modal" data-target="#modalContactUser">Follow<i class="fas fa-plus-square ml-2"></i></button>
+				<button type="button" class="btn btn-info btn-rounded btn-sm waves-effect waves-light" data-toggle="modal" data-target="#modalContactUser">Message<i class="fas fa-paper-plane ml-2"></i></button>
+				<br />
+				<a type="button" class="btn-floating btn-small waves-effect waves-light"><i class="fab fa-facebook-f grey-text"></i></a>
+				<a type="button" class="btn-floating btn-small waves-effect waves-light"><i class="fab fa-twitter grey-text"></i></a>
+				<a type="button" class="btn-floating btn-small waves-effect waves-light"><i class="fab fa-linkedin-in grey-text"></i></a>
+
+
+			</div>
+		</section>
+	</div>
+	<div class="col-md-8">
+		<ul class="nav nav-tabs md-tabs tabs-info nav-justified" id="myTabEx" role="tablist">
+			<li class="nav-item">
+				<a class="nav-link " id="home-tab-ex" data-toggle="tab" href="#Profile-ex" role="tab" aria-controls="Profile-ex"
+				   aria-selected="false"><i class="fas fa-user"></i><span>&nbsp;&nbsp;Profile</span></a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" id="contact-tab-ex" data-toggle="tab" href="#Notifications-ex" role="tab" aria-controls="Notifications-ex"
+				   aria-selected="false"><i class="fas fa-comments"></i><span> Notifications</span></a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link active show" id="contact-tab-ex" data-toggle="tab" href="#Settings-ex" role="tab" aria-controls="Settings-ex"
+				   aria-selected="true"><i class="fas fa-cog"></i><span> Settings</span></a>
+			</li>
+		</ul>
+		<div class="tab-content pt-5 col-md-12" id="myTabContentEx">
+			<div class="tab-pane fade active show" id="Profile-ex" role="tabpanel" aria-labelledby="Profile-tab-ex">
+				<div id="divedit">
+					<div class="md-form">
+						<i class="fas fa-user prefix  grey-text"></i>
+						<input type="text" id="txtFULLNAME" class="form-control validate">
+						<label data-error="Enter Full name" data-success="Looks Right" for="txtFULLNAME">Full name</label>
+					</div>
+					<div class="md-form">
+						<i class="fas fa-envelope prefix  grey-text"></i>
+						<input type="email" id="txtEMAIL1" class="form-control form-control-sm validate">
+						<label data-error="Enter Email" data-success="Looks Right" for="txtEMAIL1">Your email</label>
+					</div>
+					<div class="md-form">
+						<i class="fas fa-mobile prefix  grey-text"></i>
+						<input type="text" id="txtCONTACTNUM" class="form-control validate">
+						<label data-error="Enter Contact Number" data-success="Looks Right" for="txtCONTACTNUM">Contact Number</label>
+					</div>
+					<div class="md-form">
+						<i class="fas fa-link prefix  grey-text"></i>
+						<input type="text" id="txtINSTALINK" class="form-control validate">
+						<label data-error="Enter Instagram Link" data-success="Looks Right" for="txtINSTALINK">Instagram Link</label>
+					</div>
+					<div class="md-form">
+						<i class="fas fa-link prefix  grey-text"></i>
+						<input type="text" id="txtYOUTUBELINK" class="form-control validate">
+						<label data-error="Enter Youtube Link" data-success="Looks Right" for="txtYOUTUBELINK">Youtube Link</label>
+					</div>
+					<div class="md-form">
+						<i class="fas fa-link prefix  grey-text"></i>
+						<input type="text" id="txtFACEBOOKLINK" class="form-control validate">
+						<label data-error="Enter Facebook Link" data-success="Looks Right" for="txtFACEBOOKLINK">Facebook Link</label>
+					</div>
+				</div>
+			</div>
+			<div class="tab-pane fade" id="Notifications-ex" role="tabpanel" aria-labelledby="Notifications-tab-ex">
+				<p>
+					Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1
+					labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft
+					beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad
+					vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar
+					helvetica VHS salvia yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes
+					anderson 8-bit, sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party
+					scenester stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park.
+				</p>
+			</div>
+			<div class="tab-pane fade" id="Settings-ex" role="tabpanel" aria-labelledby="Settings-tab-ex">
+				<div class="row">
+					<div class="col-md-2">
+						<div class="list-group" id="list-tab" role="tablist">
+							<a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-Edit-Profile" role="tab" aria-controls="EditProfile"><i class="fas fa-user"></i> Edit Profile</a>
+							<a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-Privacy" role="tab" aria-controls="Privacy">Privacy</a>
+							<a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-Security" role="tab" aria-controls="Security">Security</a>
+							<a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-Manage-Account" role="tab" aria-controls="ManageAccount">Manage Account</a>
+						</div>
+					</div>
+					<div class="col-md-10">
+						<div class="tab-content" id="nav-tabContent">
+							<div class="tab-pane fade show active" id="list-Edit-Profile" role="tabpanel" aria-labelledby="list-home-list">
+								<div class="md-form">
+									<i class="fas fa-user prefix  grey-text"></i>
+									<input type="text" id="txtFULLNAME" class="form-control validate">
+									<label data-error="Enter Full name" data-success="Looks Right" for="txtFULLNAME">Full name</label>
+								</div>
+								<div class="md-form">
+									<i class="fas fa-envelope prefix  grey-text"></i>
+									<input type="email" id="txtEMAIL1" class="form-control form-control-sm validate">
+									<label data-error="Enter Email" data-success="Looks Right" for="txtEMAIL1">Your email</label>
+								</div>
+								<div class="md-form">
+									<i class="fas fa-mobile prefix  grey-text"></i>
+									<input type="text" id="txtCONTACTNUM" class="form-control validate">
+									<label data-error="Enter Contact Number" data-success="Looks Right" for="txtCONTACTNUM">Contact Number</label>
+								</div>
+								<div class="md-form">
+									<i class="fas fa-link prefix  grey-text"></i>
+									<input type="text" id="txtINSTALINK" class="form-control validate">
+									<label data-error="Enter Instagram Link" data-success="Looks Right" for="txtINSTALINK">Instagram Link</label>
+								</div>
+								<div class="md-form">
+									<i class="fas fa-link prefix  grey-text"></i>
+									<input type="text" id="txtYOUTUBELINK" class="form-control validate">
+									<label data-error="Enter Youtube Link" data-success="Looks Right" for="txtYOUTUBELINK">Youtube Link</label>
+								</div>
+								<div class="md-form">
+									<i class="fas fa-link prefix  grey-text"></i>
+									<input type="text" id="txtFACEBOOKLINK" class="form-control validate">
+									<label data-error="Enter Facebook Link" data-success="Looks Right" for="txtFACEBOOKLINK">Facebook Link</label>
+								</div>
+							</div>
+							<div class="tab-pane fade" id="list-Privacy" role="tabpanel" aria-labelledby="list-profile-list">P</div>
+							<div class="tab-pane fade" id="list-Security" role="tabpanel" aria-labelledby="list-messages-list">S</div>
+							<div class="tab-pane fade" id="list-Manage-Account" role="tabpanel" aria-labelledby="list-settings-list">MA</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<hr />
+<div class="row">
+	<div class="col-md-4"></div>
+	<div class="col-md-8">
+		<div class="clearfix d-none d-sm-block">
+			<div class="card card-cascade narrower card-ecommerce">
+				<div style="margin-top: -1.25rem;margin-right: 4%;margin-left: 4%;">
+					<div class="fotorama" data-width="1000" data-ratio="700/467" data-max-width="100%" style="border-radius:25px;">
+						<video class="video-fluid" autoplay loop>
+							<source src="~/Assets/intro.mp4" type="video/mp4" />
+						</video>
+						<img src="~/Assets/img/banner/food-banner.jpg" class="card-img-top" alt="">
+						<img src="~/Assets/img/banner/food-banner.jpg" class="card-img-top" alt="">
+						<img src="~/Assets/img/banner/food-banner.jpg" class="card-img-top" alt="">
+					</div>
+					<a>
+						<div class="mask rgba-white-slight waves-effect waves-light"></div>
+					</a>
+				</div>
+				<hr />
+				<div class="card-body card-body-cascade">
+					<a href="" class="text-muted">
+						<h5 style="color:green">Veg</h5>
+					</a>
+					<h4 class="card-title">
+						<strong>
+							<a href="">RECEIPE TITLE</a>
+						</strong>
+					</h4>
+					<hr />
+
+					<p class="card-text">
+						After 200 Words Break OR Just Show 200 Words
+					</p>
+					<div class="text-center">
+						<a href="Link of Details Page">Read More..</a>
+					</div>
+					<br />
+					@*<div class="facebook-reaction">
+							<!-- container div for reaction system -->
+							<span class="like-btn">
+								<!-- Default like button -->
+								<span class="fa like-btn-emo fa-thumbs-o-up"></span> <!-- Default like button emotion-->
+								<span class="like-btn-text">Like</span> <!-- Default like button text,(Like, wow, sad..) default:Like  -->
+								<ul class="reactions-box">
+									<!-- Reaction buttons container-->
+									<li class="reaction reaction-like" data-reaction="Like"></li>
+									<li class="reaction reaction-love" data-reaction="Love"></li>
+									<li class="reaction reaction-haha" data-reaction="HaHa"></li>
+									<li class="reaction reaction-wow" data-reaction="Wow"></li>
+									<li class="reaction reaction-sad" data-reaction="Sad"></li>
+									<li class="reaction reaction-angry" data-reaction="Angry"></li>
+								</ul>
+							</span>
+							<div class="like-stat">
+								<span class="like-emo">
+									<span class="like-btn-like"></span>
+								</span> <span class="like-details">Dhaval Rana and 1k others</span>
+							</div>
+						</div>*@
+					<ul class="form-control text-center">
+						<li class="list-inline-item float-left"><a href="#" class="black-text"><i class="fas fa-heart"></i> Like</a></li>
+						<li class="list-inline-item pr-2 float-center"><a href="#" class="black-text"><i class="fas fa-comments pr-1"></i> 12 Comments</a></li>
+						<li class="list-inline-item pr-2 float-right"><a href="#" class="black-text"><i class="fas fa-share-square"></i> Share</a></li>
+					</ul>
+				</div>
+
+				<div class="card-footer text-muted text-center">
+					<span class="float-left">Posted By <a href="Profile Link of Person">Pandurang Lad</a> - 16-May-2020 (2 days ago)</span>
+					<span class="float-right">105 Views</span>
+				</div>
+			</div>
+		</div>
+		<hr class="my-5">
+		<div class="clearfix d-none d-sm-block">
+			<div class="card card-cascade narrower card-ecommerce">
+				<div style="margin-top: -1.25rem;margin-right: 4%;margin-left: 4%;">
+					<div class="fotorama" data-width="1000" data-ratio="700/467" data-max-width="100%" style="border-radius:25px;">
+						<img src="~/Assets/img/banner/food-banner.jpg" class="card-img-top" alt="">
+						<img src="~/Assets/img/banner/food-banner.jpg" class="card-img-top" alt="">
+					</div>
+					<a>
+						<div class="mask rgba-white-slight waves-effect waves-light"></div>
+					</a>
+				</div>
+				<hr />
+				<div class="card-body card-body-cascade">
+					<a href="" class="text-muted">
+						<h5 style="color:green">Veg</h5>
+					</a>
+					<h4 class="card-title">
+						<strong>
+							<a href="">RECEIPE TITLE</a>
+						</strong>
+					</h4>
+					<hr />
+
+					<p class="card-text">
+						After 200 Words Break OR Just Show 200 Words
+					</p>
+					<hr />
+					<div class="text-center">
+						<a href="Link of Details Page">More..</a>
+					</div>
+				</div>
+				<div class="card-footer">
+					<span class="float-right">
+						<a class="" data-toggle="tooltip" data-placement="top" title="Add to Wishlist">
+							<i class="fas fa-heart"></i>
+						</a>
+					</span>
+					<span class="float-left">105 Views</span>
+				</div>
+				<div class="card-footer text-muted text-center">
+					2 days ago
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

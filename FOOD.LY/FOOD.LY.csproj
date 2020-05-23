@@ -112,6 +112,7 @@
     <Content Include="Assets\css\modules\megamenu.min.css" />
     <Content Include="Assets\css\modules\parallax.min.css" />
     <Content Include="Assets\css\style.css" />
+    <Content Include="Assets\css\summer.min.css" />
     <Content Include="Assets\fotorama\fotorama.css" />
     <Content Include="Assets\fotorama\fotorama.js" />
     <Content Include="Assets\img\lightbox\default-skin.png" />
@@ -179,6 +180,7 @@
     <Content Include="Assets\js\modules\wow.min.js" />
     <Content Include="Assets\js\popper.js" />
     <Content Include="Assets\js\popper.min.js" />
+    <Content Include="Assets\js\summer.min.js" />
     <Content Include="Assets\mdb-addons\mdb-lightbox-ui.html" />
     <Content Include="Assets\mdb-addons\preloader.html" />
     <Content Include="Assets\src\js\free\forms-free.js" />
@@ -235,6 +237,7 @@
     <Content Include="Assets\sweetalert2%409.js" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\AddRecepie.js" />
+    <Content Include="Scripts\Master.js" />
     <Content Include="Scripts\RegisterLogin.js" />
     <Content Include="Scripts\Summernote.js" />
     <Content Include="Web.config">
@@ -247,6 +250,7 @@
     <Compile Include="BE\M_RECIPE_P_V_BE.cs" />
     <Compile Include="BE\SessionKeys.cs" />
     <Compile Include="BE\T_LOGIN_BE.cs" />
+    <Compile Include="BE\T_POST.cs" />
     <Compile Include="BE\T_TOKEN_BE.cs" />
     <Compile Include="BL\SAVETOKEN.cs" />
     <Compile Include="Controllers\AddRecipeController.cs" />
@@ -398,6 +402,7 @@
     <Content Include="Views\Shared\_PartialNav.cshtml" />
     <Content Include="Views\AddRecipe\Index.cshtml" />
     <Content Include="Views\Profile\ProfileHome.cshtml" />
+    <Content Include="Views\Profile\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
