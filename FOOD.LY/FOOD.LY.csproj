@@ -238,6 +238,7 @@
     <Content Include="Global.asax" />
     <Content Include="Scripts\AddRecepie.js" />
     <Content Include="Scripts\Master.js" />
+    <Content Include="Scripts\Profile.js" />
     <Content Include="Scripts\RegisterLogin.js" />
     <Content Include="Scripts\Summernote.js" />
     <Content Include="Web.config">
@@ -248,6 +249,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="BE\M_RECIPE_BE.cs" />
     <Compile Include="BE\M_RECIPE_P_V_BE.cs" />
+    <Compile Include="BE\PROFILE_BE.cs" />
     <Compile Include="BE\SessionKeys.cs" />
     <Compile Include="BE\T_LOGIN_BE.cs" />
     <Compile Include="BE\T_POST.cs" />

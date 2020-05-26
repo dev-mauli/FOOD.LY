@@ -3,6 +3,7 @@
 	ViewBag.Title = "FOOD.LY - My Profile";
 	Layout = "~/Views/_MasterPage.cshtml";
 }
+<script src="~/Scripts/Profile.js"></script>
 <div style="padding-bottom: 75px;">
 	@*<h2>Profile</h2>*@
 </div>
@@ -20,7 +21,7 @@
 				<img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(8).jpg" alt="" class="img-fluid">
 			</div>
 			<div class="card-body">
-				<h4 class="card-title"><strong>Kshiti Ghelani</strong></h4>
+				<h4 class="card-title"><label id="lblprofilename"></label></h4>
 				<hr />
 				<h5><a href="#">Followers</a></h5>
 				<h5><a href="#">20 Following</a></h5>
@@ -39,7 +40,7 @@
 	<div class="col-md-8">
 		<ul class="nav nav-tabs md-tabs tabs-info nav-justified" id="myTabEx" role="tablist">
 			<li class="nav-item">
-				<a class="nav-link " id="home-tab-ex" data-toggle="tab" href="#Profile-ex" role="tab" aria-controls="Profile-ex"
+				<a class="nav-link active show" id="home-tab-ex" data-toggle="tab" href="#Profile-ex" role="tab" aria-controls="Profile-ex"
 				   aria-selected="false"><i class="fas fa-user"></i><span>&nbsp;&nbsp;Profile</span></a>
 			</li>
 			<li class="nav-item">
@@ -47,44 +48,49 @@
 				   aria-selected="false"><i class="fas fa-comments"></i><span> Notifications</span></a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link active show" id="contact-tab-ex" data-toggle="tab" href="#Settings-ex" role="tab" aria-controls="Settings-ex"
+				<a class="nav-link" id="contact-tab-ex" data-toggle="tab" href="#Settings-ex" role="tab" aria-controls="Settings-ex"
 				   aria-selected="true"><i class="fas fa-cog"></i><span> Settings</span></a>
 			</li>
 		</ul>
 		<div class="tab-content pt-5 col-md-12" id="myTabContentEx">
 			<div class="tab-pane fade active show" id="Profile-ex" role="tabpanel" aria-labelledby="Profile-tab-ex">
-				<div id="divedit">
-					<div class="md-form">
-						<i class="fas fa-user prefix  grey-text"></i>
-						<input type="text" id="txtFULLNAME" class="form-control validate">
-						<label data-error="Enter Full name" data-success="Looks Right" for="txtFULLNAME">Full name</label>
-					</div>
-					<div class="md-form">
-						<i class="fas fa-envelope prefix  grey-text"></i>
-						<input type="email" id="txtEMAIL1" class="form-control form-control-sm validate">
-						<label data-error="Enter Email" data-success="Looks Right" for="txtEMAIL1">Your email</label>
-					</div>
-					<div class="md-form">
-						<i class="fas fa-mobile prefix  grey-text"></i>
-						<input type="text" id="txtCONTACTNUM" class="form-control validate">
-						<label data-error="Enter Contact Number" data-success="Looks Right" for="txtCONTACTNUM">Contact Number</label>
-					</div>
-					<div class="md-form">
-						<i class="fas fa-link prefix  grey-text"></i>
-						<input type="text" id="txtINSTALINK" class="form-control validate">
-						<label data-error="Enter Instagram Link" data-success="Looks Right" for="txtINSTALINK">Instagram Link</label>
-					</div>
-					<div class="md-form">
-						<i class="fas fa-link prefix  grey-text"></i>
-						<input type="text" id="txtYOUTUBELINK" class="form-control validate">
-						<label data-error="Enter Youtube Link" data-success="Looks Right" for="txtYOUTUBELINK">Youtube Link</label>
-					</div>
-					<div class="md-form">
-						<i class="fas fa-link prefix  grey-text"></i>
-						<input type="text" id="txtFACEBOOKLINK" class="form-control validate">
-						<label data-error="Enter Facebook Link" data-success="Looks Right" for="txtFACEBOOKLINK">Facebook Link</label>
-					</div>
-				</div>
+                <div id="divedit">
+                    <div class="md-form">   
+                        <i class="fas fa-user prefix  grey-text"></i>
+                        @*<input type="text" id="txtFULLNAME" class="form-control validate">*@
+                        <label id="txtFULLNAMElbl"></label>
+                    </div>
+                    <br />
+                    <div class="md-form">
+                        <i class="fas fa-envelope prefix  grey-text"></i>
+                        @*<input type="email" id="txtEMAIL1" class="form-control form-control-sm validate">*@
+                        <label id="txtEMAIL1lbl"></label>
+                    </div>
+                    <br />
+                    <div class="md-form">
+                        <i class="fas fa-mobile prefix  grey-text"></i>
+                        @*<input type="text" id="txtCONTACTNUM" class="form-control validate">*@
+                        <label id="txtCONTACTNUMlbl"></label>
+                    </div>
+                    <br />
+                    <div class="md-form">
+                        <i class="fas fa-link prefix  grey-text"></i>
+                        @*<input type="text" id="txtINSTALINK" class="form-control validate">*@
+                        <label id="txtINSTALINKlbl"></label>
+                    </div>
+                    <br />
+                    <div class="md-form">
+                        <i class="fas fa-link prefix  grey-text"></i>
+                        @*<input type="text" id="txtYOUTUBELINK" class="form-control validate">*@
+                        <label id="txtYOUTUBELINKlbl"></label>
+                    </div>
+                    <br />
+                    <div class="md-form">
+                        <i class="fas fa-link prefix  grey-text"></i>
+                        @*<input type="text" id="txtFACEBOOKLINK" class="form-control validate">*@
+                        <label id="txtFACEBOOKLINKlbl"></label>
+                    </div>
+                </div>
 			</div>
 			<div class="tab-pane fade" id="Notifications-ex" role="tabpanel" aria-labelledby="Notifications-tab-ex">
 				<p>
@@ -112,38 +118,33 @@
 							<div class="tab-pane fade show active" id="list-Edit-Profile" role="tabpanel" aria-labelledby="list-home-list">
 								<div class="md-form">
 									<i class="fas fa-user prefix  grey-text"></i>
-									<input type="text" id="txtFULLNAME" class="form-control validate">
-									<label data-error="Enter Full name" data-success="Looks Right" for="txtFULLNAME">Full name</label>
+									<input type="text" id="txtFULLNAME_EDIT" class="form-control validate">
 								</div>
 								<div class="md-form">
 									<i class="fas fa-envelope prefix  grey-text"></i>
-									<input type="email" id="txtEMAIL1" class="form-control form-control-sm validate">
-									<label data-error="Enter Email" data-success="Looks Right" for="txtEMAIL1">Your email</label>
+									<input type="email" id="txtEMAIL1_EDIT" class="form-control form-control-sm validate">
 								</div>
 								<div class="md-form">
 									<i class="fas fa-mobile prefix  grey-text"></i>
-									<input type="text" id="txtCONTACTNUM" class="form-control validate">
-									<label data-error="Enter Contact Number" data-success="Looks Right" for="txtCONTACTNUM">Contact Number</label>
+									<input type="text" id="txtCONTACTNUM_EDIT" class="form-control validate">
 								</div>
 								<div class="md-form">
 									<i class="fas fa-link prefix  grey-text"></i>
-									<input type="text" id="txtINSTALINK" class="form-control validate">
-									<label data-error="Enter Instagram Link" data-success="Looks Right" for="txtINSTALINK">Instagram Link</label>
+									<input type="text" id="txtINSTALINK_EDIT" class="form-control validate">
 								</div>
 								<div class="md-form">
 									<i class="fas fa-link prefix  grey-text"></i>
-									<input type="text" id="txtYOUTUBELINK" class="form-control validate">
-									<label data-error="Enter Youtube Link" data-success="Looks Right" for="txtYOUTUBELINK">Youtube Link</label>
+									<input type="text" id="txtYOUTUBELINK_EDIT" class="form-control validate">
 								</div>
 								<div class="md-form">
 									<i class="fas fa-link prefix  grey-text"></i>
-									<input type="text" id="txtFACEBOOKLINK" class="form-control validate">
-									<label data-error="Enter Facebook Link" data-success="Looks Right" for="txtFACEBOOKLINK">Facebook Link</label>
+									<input type="text" id="txtFACEBOOKLINK_EDIT" class="form-control validate">
 								</div>
 							</div>
 							<div class="tab-pane fade" id="list-Privacy" role="tabpanel" aria-labelledby="list-profile-list">P</div>
 							<div class="tab-pane fade" id="list-Security" role="tabpanel" aria-labelledby="list-messages-list">S</div>
-							<div class="tab-pane fade" id="list-Manage-Account" role="tabpanel" aria-labelledby="list-settings-list">MA</div>
+							<div class="tab-pane fade" id="list-Manage-Account" role="tabpanel" aria-labelledby="list-settings-list">MA
+                            </div>
 						</div>
 					</div>
 				</div>
