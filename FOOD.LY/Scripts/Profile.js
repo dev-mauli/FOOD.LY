@@ -1,9 +1,18 @@
 ﻿$(document).ready(function () {
     ProfileData();
+    $('#btnChangePasswordClick').click(function () {
+        $('#DivChangePassword').show(1000);
+        $('#DivDeactiveNote').hide();
+    });
+
+    $('#btnDeactiveClick').click(function () {
+        $('#DivDeactiveNote').show(1000);
+        $('#DivChangePassword').hide();
+    });
 
 });
 
-//Load profile data
+//GET :  Profile Details
 function ProfileData() {
     var url = '/Profile/Profiledetails';
     $.ajax({
@@ -24,7 +33,7 @@ function ProfileData() {
                 $('#txtFACEBOOKLINKlbl').html(newData[0].FBLINK);
 
                 //FOR PROFILE NAME
-                $('#lblprofilename').append(newData[0].FULLNAME);
+                $('#lblprofilename').html(newData[0].FULLNAME);
 
                 //FOR EDIT
                 $('#txtID_EDIT').val(newData[0].ID);
@@ -44,7 +53,7 @@ function ProfileData() {
     });
 }
 
-//Update profile
+//UPDATE : Profile Details
 function UpdateProf() {
     var REGISTER_MST_UPDT =
     {
@@ -90,7 +99,60 @@ function UpdateProf() {
 
 }
 
-//Profile Validation
+//UPDATE : Profile Password
+function PasswordChange() {
+    var REGISTER_MST_UPDT =
+    {
+        OLDPASSWORD: $('#txtOLDPASSWORD').val(),
+        PASSWORD: $('#txtPASSWORD_EDIT').val()
+    };
+
+    var REGISTER_MST_JSON = JSON.stringify(REGISTER_MST_UPDT);
+
+    var url = '/Profile/ProfileChangePassword';
+
+    if ($("#btnChangePassword").val() === "PasswordChng") {
+        if (!isvalidPWD()) {
+            Swal.fire({ title: "Please Enter Values!", confirmButtonColor: "#3051d3", icon: "error" });
+        }
+        else {
+            if ($('#txtPASSWORD_EDIT').val() !== $('#txtCNFRMPASSWORD_EDIT').val())
+            {
+                $('#txtPASSWORD_EDIT').css('border-bottom', '1px solid red');
+                $('#txtCNFRMPASSWORD_EDIT').css('border-bottom', '1px solid red');
+                Swal.fire({ title: "Please Enter Same Password!", confirmButtonColor: "#3051d3", icon: "error" });
+            }
+            else {
+                $('#txtPASSWORD_EDIT').css('border-bottom', '1px solid #ccc');
+                $('#txtCNFRMPASSWORD_EDIT').css('border-bottom', '1px solid #ccc');
+                $.ajax({
+                    url: url,
+                    data: { mdl: REGISTER_MST_JSON },
+                    dataType: 'json',
+                    type: 'POST',
+                    success: function (data) {
+                        ProfileData();
+                        Swal.fire({
+                            position: 'center',
+                            icon: 'success',
+                            title: 'Updated Successfully.',
+                            showConfirmButton: false,
+                            timer: 1500
+                        });
+                    },
+                    error: function (data) {
+                        Swal.fire({ title: "Something Went Wrong", text: "Reason:" + data, confirmButtonColor: "#3051d3", icon: "error" });
+                        return false;
+                    }
+
+                });
+            }
+        }
+    }
+
+}
+
+//VALIDATION : Profile Validation
 function isvalidProfile() {
     var rntValue = true;
 
@@ -132,5 +194,35 @@ function isvalidProfile() {
         $('#txtFACEBOOKLINK_EDIT').css('border-bottom', '1px solid #ccc');
     }
 
+    return rntValue;
+}
+
+//VALIDATION : Profile Chnage Password
+function isvalidPWD() {
+    var rntValue = true;
+
+    if ($('#txtOLDPASSWORD').val() === '') {
+        $('#txtOLDPASSWORD').css('border-bottom', '1px solid red');
+        rntValue = false;
+    }
+    else {
+        $('#txtOLDPASSWORD').css('border-bottom', '1px solid #ccc');
+    }
+
+    if ($('#txtPASSWORD_EDIT').val() === '') {
+        $('#txtPASSWORD_EDIT').css('border-bottom', '1px solid red');
+        rntValue = false;
+    }
+    else {
+        $('#txtPASSWORD_EDIT').css('border-bottom', '1px solid #ccc');
+    }
+    if ($('#txtCNFRMPASSWORD_EDIT').val() === '') {
+        $('#txtCNFRMPASSWORD_EDIT').css('border-bottom', '1px solid red');
+        rntValue = false;
+    }
+    else {
+        $('#txtCNFRMPASSWORD_EDIT').css('border-bottom', '1px solid #ccc');
+    }
+   
     return rntValue;
 }

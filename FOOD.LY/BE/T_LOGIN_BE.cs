@@ -23,5 +23,7 @@ namespace FOOD.LY.BE
 		public DateTime ENTEREDON { get; set; }
 		public string ADMIN { get; set; }
 		public string ACTIVE { get; set; }
-	}
+
+        public string OLDPASSWORD { get; set; }
+    }
 }
