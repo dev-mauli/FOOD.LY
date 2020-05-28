@@ -10,12 +10,12 @@
 			data: {},
 			success: function (data) {
 				var newData = $.parseJSON(data.msg);
-				if (data.msg != "[]") {
+				if (data.msg !== "[]") {
 					var markup = '';
 					var count = newData.length;
 					for (i = 0; i < newData.length; i++) {
 						var a = [];
-						if (newData[i].IMAGE.indexOf("|") == -1) {
+						if (newData[i].IMAGE.indexOf("|") === -1) {
 							a = newData[i].IMAGE;
 						} else {
 							var b = newData[i].IMAGE;
@@ -41,7 +41,7 @@
 					</a>
 					<h4 class="card-title">
 						<strong>
-							<a href="/Recipe/${newData[i].RID}">${newData[i].TITLE}</a>
+							<a href="/Recipe?r=${newData[i].RID}">${newData[i].TITLE}</a>
 						</strong>
 					</h4>
 					<hr />
@@ -52,12 +52,12 @@
 					</div>
 					</p>
 					<div class="text-center">
-						<a href="/Recipe/${newData[i].RID}">Read More..</a>
+						<a href="/Recipe?r=${newData[i].RID}">Read More..</a>
 					</div>
 					<br />
 					<ul class="form-control text-center">
 						<li class="list-inline-item float-left"><a href="#" class="black-text"><i class="fas fa-heart"></i> Like</a></li>
-						<li class="list-inline-item pr-2 float-center"><a href="#" class="black-text"><i class="fas fa-comments pr-1"></i> Comments</a></li>
+						<!--<li class="list-inline-item pr-2 float-center"><a href="#" class="black-text"><i class="fas fa-comments pr-1"></i> Comments</a></li>-->
 						<li class="list-inline-item pr-2 float-right"><a href="#" class="black-text"><i class="fas fa-share-square"></i> Share</a></li>
 					</ul>
 				</div>
@@ -84,7 +84,7 @@
 	}
 
 	$(window).scroll(function () {
-		if ($(window).scrollTop() == $(document).height() - ($(window).height())) {
+		if ($(window).scrollTop() === $(document).height() - ($(window).height())) {
 			AllPost();
 		}
 	});

@@ -239,6 +239,7 @@
     <Content Include="Scripts\AddRecepie.js" />
     <Content Include="Scripts\Master.js" />
     <Content Include="Scripts\Profile.js" />
+    <Content Include="Scripts\Recipe.js" />
     <Content Include="Scripts\RegisterLogin.js" />
     <Content Include="Scripts\Summernote.js" />
     <Content Include="Web.config">
@@ -258,6 +259,7 @@
     <Compile Include="Controllers\AddRecipeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProfileController.cs" />
+    <Compile Include="Controllers\RecipeController.cs" />
     <Compile Include="DL\AbstractDatabaseFactory.cs" />
     <Compile Include="DL\ClassConverterHelper.cs" />
     <Compile Include="DL\SQLHelper.cs" />
@@ -405,6 +407,7 @@
     <Content Include="Views\AddRecipe\Index.cshtml" />
     <Content Include="Views\Profile\ProfileHome.cshtml" />
     <Content Include="Views\Profile\Index.cshtml" />
+    <Content Include="Views\Recipe\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

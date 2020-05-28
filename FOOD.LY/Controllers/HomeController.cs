@@ -119,7 +119,7 @@ namespace FOOD.LY.Controllers
 			T_POST p = new T_POST();
 			//if (Session[SessionKeys.LOGINID].ToString() == "" || Session[SessionKeys.LOGINID] == null)
 			//{
-				p.ENTEREDBY = 0;
+				p.ENTEREDBY = "0";
 			//}
 			//else
 			//{
@@ -128,7 +128,7 @@ namespace FOOD.LY.Controllers
 
 			T_TOKEN_BE api = new T_TOKEN_BE
 			{
-				TOKENPATH = "/api/Home/AllPost",
+				TOKENPATH = "/api/Home/AllHomeDetails",
 				TOKEMSG = serializer.Serialize(p)
 			};
 

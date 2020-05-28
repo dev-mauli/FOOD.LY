@@ -1,0 +1,69 @@
+﻿@{
+	ViewBag.Title = "Index";
+	Layout = "~/Views/_MasterPage.cshtml";
+}
+
+<section class="section mt-5 pb-3 wow fadeIn" style="visibility: visible; animation-name: fadeIn;">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="card card-cascade wider reverse">
+				<div class="view view-cascade overlay">
+					<div id="divimg" class="fotorama" data-width="1000" data-ratio="700/467" data-max-width="100%" style="border-radius:25px;"></div>
+				</div>
+				<div class="card-body card-body-cascade text-center">
+					<h2><a><strong id="title"></strong></a></h2>
+					<p class="text-center" id="lbltag"></p>
+					<p  class="text-center" id="postedby"></p>
+					<div class="social-counters ">
+						<a class="btn btn-fb  waves-effect waves-light">
+							<i class="fas fa-heart left "></i>
+							<span class="clearfix d-none d-md-block">Like</span>
+						</a>
+						<span class="counter " id="countlike"></span>
+
+						<a class="btn btn-tw  waves-effect waves-light">
+							<i class="fas fa-eye left "></i>
+							<span class="clearfix d-none d-md-block">Views</span>
+						</a>
+						<span class="counter " id="countviews"></span>
+
+						<a class="btn btn-dribbble  waves-effect waves-light">
+							<i class="fas fa-share-square left "></i>
+							<span class="clearfix d-none d-md-block">Share</span>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="excerpt mt-5 wow fadeIn" data-wow-delay="0.3s" style="visibility: visible; animation-name: fadeIn; animation-delay: 0.3s;">
+				<div id="descpition"></div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section>
+	<div class="jumbotron p-5 text-center text-md-left author-box wow fadeIn" data-wow-delay="0.3s" style="visibility: visible; animation-name: fadeIn; animation-delay: 0.3s;">
+		<h4 class="h3-responsive text-center font-weight-bold dark-grey-text">Posted By</h4>
+		<hr>
+		<div class="row">
+			<div class="col-12 col-md-2 mb-md-0 mb-4">
+				<div id="imgprofile"></div>
+				
+			</div>
+			<div class="col-12 col-md-10" style="padding: 50px;">
+				<h5 class="font-weight-bold dark-grey-text mb-3">
+					<strong id="lblprofilename"></strong>
+				</h5>
+				<div class="personal-sm pb-3">
+					<div id="divsocialprofile"></div>
+					@*<a class="fb-ic pr-2"><i class="fab fa-facebook-f mr-2"> </i></a>
+						<a class="tw-ic pr-2"><i class="fab fa-twitter mr-2"> </i></a>
+						<a class="gplus-ic pr-2"><i class="fab fa-google-plus-g mr-2"> </i></a>
+						<a class="li-ic pr-2"><i class="fab fa-linkedin-in mr-2"> </i></a>*@
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<script src="~/Scripts/Recipe.js"></script>
